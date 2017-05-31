@@ -1,0 +1,165 @@
+  $RP_INPUT
+!##########################################################################!
+!  CATT-BRAMS/MCGA-CPTEC emission model    CPTEC/INPE                      !
+!  version 1: 28/feb/2007                                                  !
+!  developed/coded by Saulo Freitas and Karla Longo                        !
+!  contact: sfreitas@cptec.inpe.br   - www.cptec.inpe.br/meio_ambiente     !
+!###########################################################################
+
+ 
+!---------------- grid_type of the grid output
+   grid_type= 'lambert',	
+   		       !'rams' = rams grid 
+   		       ! 'polar'  = polar sterog. grid output
+                       ! 'gg'     = gaussian grid output
+		       ! 'll'     = lat/lon grid output
+		       ! 'lambert'  = lambert grid output
+		       ! 'mercator' = mercator grid output
+ 
+!---------------- if the output data is for use in CATT-BRAMS model, provide at least one analysis file 
+!---------------- of this model
+    rams_anal_prefix = './ANL/barca',
+!---------------- date of emission  
+!---------------- date of emission
+    ihour=00, 
+    iday={fromday:s}, 
+    imon={frommonth:s}, 
+    iyear={fromyear:s},
+
+!---------------- select the sources datasets to be used   
+   use_retro =1,  ! 1 = yes, 0 = not
+   retro_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/RETRO/anthro',
+
+   use_edgar =1,  ! 0 - not, 1 - Version 3, 2 - Version 4 for some species
+   edgar_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/EDGAR/anthro',
+
+   use_gocart =1,
+   gocart_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART/emissions',
+
+   use_fwbawb =0,
+   fwbawb_data_dir ='/lfs0/projects/wrf-chem/wrfchemv33/Emission_data/Emissions_Yevich_Logan',
+
+   use_bioge =0, ! 1 - geia, 2 - megan 
+   !bioge_data_dir='/home/poluicao/EMISSION_DATA/MEGAN/2000',   
+
+   use_gfedv2 =0,
+   gfedv2_data_dir ='/home/poluicao/EMISSION_DATA/GFEDv2-8days',
+
+   use_bbem =1,
+   use_bbem_plumerise =1,
+!---------------- if  the merging of gfedv2 with bbem is desired (=1, yes, 0 = no)  
+   merge_GFEDv2_bbem =0,
+!---------------- Fire product for BBBEM/BBBEM-plumerise emission models
+   bbem_wfabba_data_dir   ='/datadir/UAFSMOKE/dat/fires_data/wf_abba_v61/DUMMY',
+   bbem_modis_data_dir    ='/datadir/UAFSMOKE/dat/fires_data/modis/DUMMY',
+   bbem_inpe_data_dir     ='/datadir/UAFSMOKE/dat/fires_data/focos/DUMMY',
+   bbem_extra_data_dir    ='/datadir/UAFSMOKE/dat/fires_data/VIIRS-I-afm/VIIRS-I_',
+
+!---------------- veg type data set (dir + prefix)
+  veg_type_data_dir      ='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_IGBP_MODIS_INPE/MODIS',
+  
+!---------------- vcf type data set (dir + prefix)
+  use_vcf = 0,
+! vcf_type_data_dir      ='/dados/dados3/stockler/VCF/data_out/2004/VCF',	       
+       
+
+!----------------  Carbon density data  ----------------
+!----------------  New Olson''s data set (dir + prefix)
+ olson_data_dir= '/datadir/UAFSMOKE/dat/Global_emissions_v3/Emission_data/OLSON2/OLSON',   
+     
+!----------------  Old Olson''s data set
+  carbon_density_data_dir='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_OGE_INPE/OGE',
+ 
+!---------------- carbon density data set for Amazon (dir + prefix)
+  fuel_data_dir      ='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/fuel/glc2000_fuel_load.nc',
+ 
+!---------------- gocart background
+  use_gocart_bg =1,
+  gocart_bg_data_dir='/datadir/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART',
+
+!---------------- volcanoes emissions
+   use_volcanoes =0,
+   volcano_index =1449, !EYJA
+
+! use_these_values='NONE',
+! define a text file for using external values for INJ_HEIGHT, DURATION,
+! MASS ASH (units are meters - seconds - kilograms) and the format for
+! a file 'values.txt' is like this:
+! 11000. 10800. 1.5e10
+  use_these_values='EYJA.txt', 
+  begin_eruption='201005090100',  !begin time UTC of eruption YYYYMMDDhhmm   
+
+!---------------- degassing volcanoes emissions
+   use_degass_volcanoes =0,
+   degass_volc_data_dir ='/home/poluicao/EMISSION_DATA/VOLC_SO2', 
+
+!---------------- user specific  emissions directory
+!---------------- Update for South America megacities
+!---------------- set 'NONE' if you do not want to use
+!  user_data_dir='/home/poluicao/EMISSION_DATA/SouthAmerica_Megacities',
+   user_data_dir='NONE',
+
+
+!--------------------------------------------------------------------------------------------------
+   pond=1,   ! mad/mfa  0 -> molar mass weighted 
+             !          1 -> Reactivity weighted   
+
+!---------------- for grid type 'll' or 'gg' only
+   grid_resolucao_lon=0.2,
+   grid_resolucao_lat=0.2,
+
+   nlat=320,          ! if gg (only global grid)
+   lon_beg   = -180., ! (-180.:+180.) long-begin of the output file
+   lat_beg   = -90., ! ( -90.:+90. ) lat -begin of the output file
+   delta_lon = 360., ! total long extension of the domain (360 for global)
+   delta_lat = 180., ! total lat  extension of the domain (180 for global)
+
+!---------------- For regional grids (polar or lambert)
+
+   NGRIDS   = 1,            ! Number of grids to run
+
+   NNXP     = 300,201,86,46,        ! Number of x gridpoints
+   NNYP     = 300,311,74,46,        ! Number of y gridpoints
+   NXTNEST  = 0,1,2,3,          ! Grid number which is the next coarser grid
+   DELTAX   = 5000.,
+   DELTAY   = 5000.,         ! X and Y grid spacing
+
+   ! Nest ratios between this grid and the next coarser grid.
+   NSTRATX  = 1,5,3,4,           ! x-direction
+   NSTRATY  = 1,5,3,4,           ! y-direction
+
+   NINEST = 1,10,0,0,        ! Grid point on the next coarser
+   NJNEST = 1,10,0,0,        !  nest where the lower southwest
+                             !  corner of this nest will start.
+                             !  If NINEST or NJNEST = 0, use CENTLAT/LON
+   POLELAT  = 65.,           ! If polar, latitude/longitude of pole point
+   POLELON  = -152.,         ! If lambert/mercator, lat/lon of grid origin (x=y=0.) (ref_lat
+                             ! /ref_lon from namelist.wps)
+
+   STDLAT1  = 65.,           ! If polar, unused
+   STDLAT2  = 65.,           ! If lambert, standard latitudes of projection 
+                             !(truelat2/truelat1 from namelist.wps, STDLAT1 < STDLAT2)
+                             ! If mercator STDLAT1 = 1st true latitude 
+
+   CENTLAT  = 65.,  -23., 27.5,  27.5,   ! (ref_lat/ref_lon from namelist.wps)
+   CENTLON  = -152., -46.,-80.5, -80.5,
+
+
+
+!---------------- model output domain for each grid (only set up for rams)
+   lati =  -90.,  -90.,   -90., 
+   latf =  +90.,  +90.,   +90.,  
+   loni = -180., -180.,  -180., 
+   lonf =  180.,  180.,   180., 
+
+!---------------- project rams grid (polar sterogr) to lat/lon: 'YES' or 'NOT'
+   proj_to_ll='NO', 
+   
+!---------------- output file prefix (may include directory other than the current)
+   chem_out_prefix = 'wrf_chemi_input',
+   chem_out_format = 'vfm',
+!---------------- convert to WRF/CHEM (yes,not)
+  special_output_to_wrf = 'YES',
+   
+  $END
+
