@@ -2,6 +2,7 @@
 met_em.d*
 *_d01
 wrf_gocart_backg
+credentials.*
 emiss_prep_cptec/*
 archive/*
 OLD_TEMPLATES/*
