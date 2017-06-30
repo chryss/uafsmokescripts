@@ -12,7 +12,7 @@ DATETIMEPATTERN = "%Y-%m-%d_%H:%M:%S"
 TODAY = dt.datetime.utcnow()
 DATESTAMP1 = TODAY.strftime(DATEPATTERN)
 DEFAULTDAYS = 3
-DEFAULTSCRIPT = 'wrf_uafsmokerun.pbs'
+DEFAULTSCRIPT = 'wrf_uafsmoke_dev.slurm'
 TEMPLATEDIR = 'TEMPLATES'
 
 def parse_arguments():
@@ -45,7 +45,7 @@ parameters['toyear'] = str(enddatetime.year)
 parameters['tomonth'] = str(enddatetime.month).zfill(2)
 parameters['today'] = str(enddatetime.day).zfill(2)
 parameters['hours'] = str(args.days * 24)
-parameters['torquescript'] = args.scriptname
+parameters['slurmscript'] = args.scriptname
 
 for item in parameters:
     print(item, parameters[item])
