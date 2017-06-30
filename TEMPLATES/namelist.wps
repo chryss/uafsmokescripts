@@ -23,7 +23,7 @@
     truelat1  =  65.00,
     truelat2  =  65.00,
     stand_lon = -152.00,
-    geog_data_path = '/datadir/VOLCWRF/src/geog'
+    geog_data_path = '/center1/d/VOLCWRF/src/geog'
    /
    
    &ungrib

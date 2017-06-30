@@ -28,13 +28,13 @@
 
 !---------------- select the sources datasets to be used   
    use_retro =1,  ! 1 = yes, 0 = not
-   retro_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/RETRO/anthro',
+   retro_data_dir='/center1/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/RETRO/anthro',
 
    use_edgar =1,  ! 0 - not, 1 - Version 3, 2 - Version 4 for some species
-   edgar_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/EDGAR/anthro',
+   edgar_data_dir='/center1/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/EDGAR/anthro',
 
    use_gocart =1,
-   gocart_data_dir='/center/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART/emissions',
+   gocart_data_dir='/center1/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART/emissions',
 
    use_fwbawb =0,
    fwbawb_data_dir ='/lfs0/projects/wrf-chem/wrfchemv33/Emission_data/Emissions_Yevich_Logan',
@@ -50,13 +50,15 @@
 !---------------- if  the merging of gfedv2 with bbem is desired (=1, yes, 0 = no)  
    merge_GFEDv2_bbem =0,
 !---------------- Fire product for BBBEM/BBBEM-plumerise emission models
-   bbem_wfabba_data_dir   ='/datadir/UAFSMOKE/dat/fires_data/wf_abba_v61/DUMMY',
-   bbem_modis_data_dir    ='/datadir/UAFSMOKE/dat/fires_data/modis/DUMMY',
-   bbem_inpe_data_dir     ='/datadir/UAFSMOKE/dat/fires_data/focos/DUMMY',
-   bbem_extra_data_dir    ='/datadir/UAFSMOKE/dat/fires_data/VIIRS-I-afm/VIIRS-I_',
+   bbem_wfabba_data_dir   ='/center1/d/UAFSMOKE/dat/fires_data/GOES/f',
+   bbem_modis_data_dir    ='/center1/d/UAFSMOKE/dat/fires_data/MODIS/Fires',
+   !bbem_modis_data_dir    ='/center1/d/UAFSMOKE/dat/fires_data/MODIS/MOD_',
+   bbem_inpe_data_dir     ='/center1/d/UAFSMOKE/dat/fires_data/DSA/Focos',
+   bbem_extra_data_dir    ='/center1/d/UAFSMOKE/dat/fires_data/FIRMS_MODIS/FIRMS_',
+   !bbem_extra_data_dir    ='/center1/d/UAFSMOKE/dat/fires_data/FIRMS_VIIRS-I/FIRMS_',
 
 !---------------- veg type data set (dir + prefix)
-  veg_type_data_dir      ='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_IGBP_MODIS_INPE/MODIS',
+  veg_type_data_dir      ='/center1/d/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_IGBP_MODIS_INPE/MODIS',
   
 !---------------- vcf type data set (dir + prefix)
   use_vcf = 0,
@@ -65,17 +67,17 @@
 
 !----------------  Carbon density data  ----------------
 !----------------  New Olson''s data set (dir + prefix)
- olson_data_dir= '/datadir/UAFSMOKE/dat/Global_emissions_v3/Emission_data/OLSON2/OLSON',   
+ olson_data_dir= '/center1/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/OLSON2/OLSON',   
      
 !----------------  Old Olson''s data set
-  carbon_density_data_dir='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_OGE_INPE/OGE',
+  carbon_density_data_dir='/center1/d/UAFSMOKE/dat/Global_emissions_v3/surface_data/GL_OGE_INPE/OGE',
  
 !---------------- carbon density data set for Amazon (dir + prefix)
-  fuel_data_dir      ='/datadir/UAFSMOKE/dat/Global_emissions_v3/surface_data/fuel/glc2000_fuel_load.nc',
+  fuel_data_dir      ='/center1/d/UAFSMOKE/dat/Global_emissions_v3/surface_data/fuel/glc2000_fuel_load.nc',
  
 !---------------- gocart background
   use_gocart_bg =1,
-  gocart_bg_data_dir='/datadir/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART',
+  gocart_bg_data_dir='/center1/d/UAFSMOKE/dat/Global_emissions_v3/Emission_data/GOCART',
 
 !---------------- volcanoes emissions
    use_volcanoes =0,

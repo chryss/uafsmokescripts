@@ -11,7 +11,7 @@
  start_second                        = 00,   00,   00,
  end_year                            = {toyear:s}, 2000, 2000,
  end_month                           = {tomonth:s},   01,   01,
- end_day                             = {today:s},   25,   25,
+ end_day                             = {today:s},   24,   24,
  end_hour                            = 00,   12,   12,
  end_minute                          = 00,   00,   00,
  end_second                          = 00,   00,   00,
@@ -30,21 +30,17 @@
  auxinput8_inname                    = 'wrfchemi_gocart_bg_d<domain>',
  auxinput12_inname                   = 'wrf_chem_input_d<domain>',
  auxinput5_interval_m                = 86400, 86400, 60,
- auxinput6_interval_m                = 86400, 86400, 60, 
  auxinput7_interval_m                = 86400, 86400, 60, 
  auxinput8_interval_m                = 86400, 86400, 60, 
  auxinput12_interval_m               = 86400, 86400, 60, 
- auxinput13_interval_m               = 86400, 86400, 60,
  io_form_auxinput2                   = 2,
  io_form_auxinput5                   = 2,
- io_form_auxinput6                   = 0,
  io_form_auxinput7                   = 2,
  io_form_auxinput8                   = 2,
  io_form_auxinput12                  = 2,
- frames_per_auxinput7                = 1 
- frames_per_auxinput7                = 1 
- frames_per_auxinput8                = 1 
- frames_per_auxinput12               = 1 
+ frames_per_auxinput7                = 1, 
+ frames_per_auxinput8                = 1, 
+ frames_per_auxinput12               = 1, 
  debug_level                         = 0,
  /
 
@@ -57,7 +53,7 @@
  e_sn                                = 300,    97,    91,
  e_vert                              = 30,    30,    30,
  p_top_requested                     = 5000,
- num_metgrid_levels                  = 27,
+ num_metgrid_levels                  = 32,
  num_metgrid_soil_levels             = 4,
  dx                                  = 5000, 10000,  3333.33,
  dy                                  = 5000, 10000,  3333.33,
@@ -94,7 +90,7 @@
  progn                               = 0,
  ra_lw_physics                       = 1,     1,     1,
  ra_sw_physics                       = 2,     1,     1,
- radt                                = 30,    30,    30,
+ radt                                = 5,    30,    30,
  sf_sfclay_physics                   = 1,     1,     1,
  sf_surface_physics                  = 2,     2,     1,
  sf_urban_physics                    = 0,     0,     0,
