@@ -8,6 +8,26 @@
 PCSDIR=/center1/d/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/
 WPSDIR=/center1/d/UAFSMOKE/src/WPS
 WRFRUNDIR=/center1/d/UAFSMOKE/src/WRFV3/test/em_real
+NODEPLOY=0
+RUNFIRMS=1
+
+while [[ $# -ge 1 ]]
+do
+    key="$1"
+    case $key in
+        -n|--nofirms)
+            RUNFIRMS=0
+            shift
+            ;;
+        -t|--test)
+            NODEPLOY=1
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
 
 if [ $# -gt 1 ]; then
     RUNDAYS=$2
@@ -20,14 +40,16 @@ else
     RUNDATE=`date -u +"%Y%m%d"`
 fi
 
-# Step 1: update latest fire data
-/bin/bash firmsrun.sh
+if [ $RUNFIRMS -eq 1 ]; then
+    # Step 1: update latest fire data
+    /bin/bash -l firmsrun.sh
+fi
 
 # Step 2: generate latest namelists 
-/bin/bash generatenamelists.sh $RUNDATE $RUNDAYS $3 
+/bin/bash -l generatenamelists.sh $RUNDATE $RUNDAYS $3 
 
 # Step 3: run preprocesors
-/bin/bash runpreprocessors.sh
+/bin/bash -l runpreprocessors.sh
 
 # Step 4: launch WRF
-/bin/bash launchsmokerun.sh
+/bin/bash -l launchsmokerun.sh $NODEPLOY
