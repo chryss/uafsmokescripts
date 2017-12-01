@@ -5,9 +5,9 @@
 # 3. WRF namelist - 2 versions w/ & w/o chemistry
 # NOTE THAT meteorological input data  must be updated beforehand!
 
-PCSDIR=/center1/d/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/
-WPSDIR=/center1/d/UAFSMOKE/src/WPS
-WRFRUNDIR=/center1/d/UAFSMOKE/src/WRFV3/test/em_real
+PCSDIR=/center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/
+WPSDIR=/center1/UAFSMOKE/UAFSMOKE/src/WPS
+WRFRUNDIR=/center1/UAFSMOKE/UAFSMOKE/src/WRFV3/test/em_real
 NODEPLOY=0
 RUNFIRMS=1
 

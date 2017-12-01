@@ -6,9 +6,9 @@
 # Step 3 of full smoke run
 
 SCRIPTDIR=`pwd`
-PCSDIR=/center1/d/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/
-WPSDIR=/center1/d/UAFSMOKE/src/WPS
-WRFRUNDIR=/center1/d/UAFSMOKE/src/WRFV3/test/em_real
+PCSDIR=/center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/
+WPSDIR=/center1/UAFSMOKE/UAFSMOKE/src/WPS
+WRFRUNDIR=/center1/UAFSMOKE/UAFSMOKE/src/WRFV3/test/em_real
 
 module purge
 module load toolchain/pic-intel/2016b
@@ -20,7 +20,6 @@ module list
 
 # move namelists in place
 mv prep_chem_sources.inp $PCSDIR
-mv namelist.input.uafsmoke* $WRFRUNDIR
 mv namelist.wps $WPSDIR
 
 # run preprocesors
@@ -32,7 +31,7 @@ echo "`date`: In $WPSDIR"
 #rm GRIBFILE.*
 rm met_em.d*
 rm FILE*
-#./link_grib.csh gfs/gfs*
+./link_grib.csh gfs/gfs*
 ./ungrib.exe
 ./metgrid.exe
 cd $SCRIPTDIR

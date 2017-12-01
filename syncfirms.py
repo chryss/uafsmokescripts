@@ -18,7 +18,7 @@ PROD = {'MODIS': 'c6',
     'VIIRS-I': 'viirs' 
 }
 LOCPTH = ['Alaska', 'Canada']
-LOCALDIR = "/center1/d/UAFSMOKE/dat/fires_data/"
+LOCALDIR = "/center1/UAFSMOKE/UAFSMOKE/dat/fires_data/"
 DEFAULTDAYS = 3
 ARCHIVE = 'archive'
 

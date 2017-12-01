@@ -1,6 +1,6 @@
 #!/bin/bash -l
 # Retrieve the day's GFS forecast from Ji Zhang's download
-TARGETDIR=/center1/d/UAFSMOKE/src/WPS/gfs
+TARGETDIR=/center1/UAFSMOKE/UAFSMOKE/src/WPS/gfs
 #scp waigl@pacman2.arsc.edu:/import/c/w/jizhang/rt_wrf/gribfiles-gfs/`date -u +"%Y%j"`00/gfs* .
 
 while [[ $# -ge 1 ]]

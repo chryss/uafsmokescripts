@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SCRIPTDIR=/center1/d/UAFSMOKE/src/scripts
-WRFDIR=/center1/d/UAFSMOKE/src/WRFV3/test/em_real/
+SCRIPTDIR=/center1/UAFSMOKE/UAFSMOKE/src/scripts
+WRFDIR=/center1/UAFSMOKE/UAFSMOKE/src/WRFV3/test/em_real/
 FLAG=POSTPROCESS.ME
 LOCK=POSTPROCESS.LOCK
 
