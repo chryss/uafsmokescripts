@@ -8,3 +8,6 @@ archive/*
 OLD_TEMPLATES/*
 PREP*
 uafsmoke_postprocess.*
+postprocess.slurm
+postprocess.sh
+launchsmokerun_future.sh
