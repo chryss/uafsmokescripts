@@ -9,7 +9,7 @@ RUNDATE=$1
 RUNDAYS=$2
 
 module purge
-module load python
+module load lang/Anaconda3
 source activate py27_uafsmoke
 
 #if [ $# -lt 2 ]; then
