@@ -17,11 +17,11 @@ rm wrfinput_d01
 rm wrf_chem_input_d01
 rm met_em.d*
 rm rsl.*
-ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-09-04-000000-g1-gocartBG.bin wrf_gocart_backg
-ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-09-04-000000-g1-bb.bin emissfire_d01
-ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-09-04-000000-g1-ab.bin emissopt3_d01
+ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-12-01-000000-g1-gocartBG.bin wrf_gocart_backg
+ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-12-01-000000-g1-bb.bin emissfire_d01
+ln -sf /center1/UAFSMOKE/UAFSMOKE/src/PREP-CHEM-SRC-1.4_chinook/bin/wrf_chemi_input-T-2017-12-01-000000-g1-ab.bin emissopt3_d01
 ln -sf /center1/UAFSMOKE/UAFSMOKE/src/WPS/met_em.d* .
-ln -sf /center1/UAFSMOKE/UAFSMOKE/run/wrfout/2017_singles/wrfout_d01_2017-09-04_00:00:00 wrf_chem_input_d01
+ln -sf /center1/UAFSMOKE/UAFSMOKE/run/wrfout/2017_singles/wrfout_d01_2017-12-01_00:00:00 wrf_chem_input_d01
 
 echo "`date`: Submitting job."
 jid1=`sbatch wrf_uafsmoke_dev.slurm`
