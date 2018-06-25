@@ -6,7 +6,7 @@ credentials.*
 emiss_prep_cptec/*
 archive/*
 OLD_TEMPLATES/*
-PREP*
+PREP-*
 uafsmoke_postprocess.*
 postprocess.slurm
 postprocess.sh
